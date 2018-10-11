@@ -49,23 +49,62 @@ The correlation matrix actually shows a negative correlation between star rating
 
 ### Hypothesis testing
 
-I hypothesized that vine reviewers may have some bias, unconscious or otherwise,
+My first hypothesis was that vine reviewers may have some bias, unconscious or otherwise,
 in favor of the products they were reviewing due to the fact that they were received
-for free. The null hypothesis for my test was that the mean of the distribution of
-average product scores would be identical for vine vs. verified purchases. The alternate
-hypothesis was that the two means would be different.
+for free.
 
 Average star ratings were calculated for both vine and verified purchases
-for each of the 643 products in the set. The distribution of average star ratings was
-plotted for both vine and verified purchases and fitted to a beta distribution. Data values were
-scaled so that the maximum x-value was 1 and the histogram was displayed as a probability density.
+for each of the 643 products in the set. Averages for each product were used to correct for any inherent quality imbalance in the total set of reviews. The distribution of average star ratings was plotted for both vine and verified purchases and fitted to a beta distribution. Data values were scaled so that the maximum x-value was 1 and the histogram was displayed as a probability density.
 
+The null hypothesis for my test was that the mean of the distribution of
+average vine ratings would be identical to that of average verified ratings. The alternate
+hypothesis was that the two means would be different.
 
-Distribution A - average score given to each product by vine reviewers.
+![](images/star_rating_distributions.png)
+![](images/star_rating_beta.png)
+
+vines distribution - average score given to each product by vine reviewers.
 
 A Baysian hypothesis test was conducted wherein a point was selected at random from each
 beta distribution and the value of the two points was compared. This process was repeated
-10,000 times yielding the a probability of 0.4372 that the mean of the vines distribution was larger
-than the mean of the verified distribution.
+10,000 times yielding the a probability of 0.4372 that the mean of the vines distribution was larger than the mean of the verified distribution.
+
+It is 43.31 percent probable that the distribution of average
+star rating for vine reviews is higher than for verified purchases
+
+It is 54.37 percent probable that the distribution of average
+helpful ratio for vine reviews is higher than for verified purchases
+
+It is 49.57 percent probable that the distribution of average
+review word count for vine reviews is higher than for verified purchases
 
 ![](images/star_distributions.png)
+
+
+
+
+
+run vine_hypothesis.py                                                  
+Analysis of 100489 reviews of 643 unique products
+
+
+
+Test that the proportion of 1's for vine reviews does not
+equal that of verified purchases with a significance level of 0.05
+We reject the null hypothesis. P-score: 0.0
+
+Test that the proportion of 2's for vine reviews does not
+equal that of verified purchases with a significance level of 0.05
+We cannot reject the null hypothesis. P-score: 0.10867728501652096
+
+Test that the proportion of 3's for vine reviews does not
+equal that of verified purchases with a significance level of 0.05
+We reject the null hypothesis. P-score: 0.0
+
+Test that the proportion of 4's for vine reviews does not
+equal that of verified purchases with a significance level of 0.05
+We reject the null hypothesis. P-score: 0.0
+
+Test that the proportion of 5's for vine reviews does not
+equal that of verified purchases with a significance level of 0.05
+We reject the null hypothesis. P-score: 0.0
