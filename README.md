@@ -1,3 +1,5 @@
+## Analysis of Amazon Vine reviews
+
 ### Motivation:
 
 I chose to analyze reviews that were posted on Amazon as part of the Amazon Vine program. Amazon describes this program as being open to their highest ranked reviewers, judged by quality and helpfulness. Amazon together with product manufacturers provides Vine reviewers with free products in exchange for their reviews.
@@ -5,7 +7,7 @@ I chose to analyze reviews that were posted on Amazon as part of the Amazon Vine
 On one hand, a well-written and authentic review would certainly be valuable to other customers. On the other hand, wouldn’t the reviewer be subconsciously predisposed to viewing a free product in a positive light? My goal is to examine whether vine reviews show any bias and whether they are more helpful than other reviews.
 
 ### Data Source
-Amazon’s customer review dataset. Because the full dataset includes over 130 million entries, a subset of reviews was chosen. From 10,000,000 reviews imported from the toys category, a set of 643 unique products was selected which had at least 20 each of vine reviews and verified (but not vine) reviews. The subset of reviews for these products consisted of 100,489 individual reviews.
+Amazon’s customer review dataset. Because the full dataset includes over 130 million entries, a subset of reviews was chosen. From ***10,000,000*** reviews imported from the toys category, a set of ***643 unique products*** was selected which had at least 20 each of vine reviews and verified (but not vine) reviews. The subset of reviews for these products consisted of ***100,489 individual reviews***.
 
 Summary from 49 sample entries:
 
@@ -59,24 +61,24 @@ average vine ratings would be identical to that of average verified ratings. The
 hypothesis was that the two means would be different.
 
 ![](images/star_rating_distributions.png)
-Distribution of average scores (0-1 scale) given to each product by vine reviewers (left).
+Distribution of average scores (0-1 scale) given to each product by vine reviewers (left).  
 Distribution of average scores (0-1 scale) given to each product by verified reviewers (right).
 ![](images/star_rating_beta.png)
 
 A Bayesian hypothesis test was conducted wherein a point was selected at random from each
 beta distribution and the value of the two points was compared. This process was repeated
-10,000 times with the result that it was only 43.21 percent probable that the mean of the vines distribution was larger than the mean of the verified distribution.
+10,000 times with the result that it was only ***43.21 percent probable*** that the mean of the vines distribution was larger than the mean of the verified distribution.
 
 Two more hypothesis tests were conducted in an analogous manner but comparing the distributions of average helpfulness ratio - defined as helpful votes over total votes - and the word count of each review between vine and verified reviewers. Do vine reviewers write more comprehensive (longer), or more helpful reviews?
 
 ![](images/helpful_ratio_distributions.png)
 
-It was found to be 54.37 percent probable that the distribution of average
+It was found to be ***54.37 percent probable*** that the distribution of average
 helpful ratio for vine reviews is higher than for verified purchases.
 
 ![](images/word_count_distributions.png)
 
-It was 49.57 percent probable that the distribution of average
+It was ***49.57 percent probable*** that the distribution of average
 review word count for vine reviews is higher than for verified purchases
 
 One interesting feature found during EDA was that the overall distribution of star ratings appeared to be different between vine, verified and not-verified purchases.
@@ -87,6 +89,7 @@ A z-test was conducted with an alpha of 0.05 for each of the five categories of 
 
 ### Future directions
 It would be interesting to be able to model what makes a helpful review. One piece of EDA suggested that there was a positive correlation between helpfulness and word count. Could the helpfulness of a review be predicted by the inclusion of certain words, for example: "fun", "broken", or "value"?
+
 
 ![](images/word_count_correlation.png)
 
