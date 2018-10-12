@@ -65,7 +65,7 @@ Distribution of average scores (0-1 scale) given to each product by vine reviewe
 Distribution of average scores (0-1 scale) given to each product by verified reviewers (right).
 ![](images/star_rating_beta.png)
 
-A Bayesian hypothesis test was conducted wherein a point was selected at random from each
+The hypothesis was tested using a simulation, wherein a point was selected at random from each
 beta distribution and the value of the two points was compared. This process was repeated
 10,000 times with the result that it was only ***43.21 percent probable*** that the mean of the vines distribution was larger than the mean of the verified distribution.
 
