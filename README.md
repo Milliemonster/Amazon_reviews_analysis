@@ -59,7 +59,7 @@ average vine ratings would be identical to that of average verified ratings. The
 hypothesis was that the two means would be different.
 
 ![](images/star_rating_distributions.png)
-Distribution of average scores (0-1 scale) given to each product by vine reviewers (left).
+Distribution of average scores (0-1 scale) given to each product by vine reviewers (left).  
 Distribution of average scores (0-1 scale) given to each product by verified reviewers (right).
 ![](images/star_rating_beta.png)
 
